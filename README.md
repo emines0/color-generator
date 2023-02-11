@@ -8,3 +8,7 @@
 - set class name based on condition
 - map over colors from values.js and create SingleColor component
 - passing all parameter of color to SingleColor component
+- use function join
+- using function from util.js to convert rgb to hex
+- adding class based on condition
+- copy to clipboard
