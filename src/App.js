@@ -4,9 +4,9 @@ import SingleColor from './SingleColor'
 import Values from 'values.js'
 
 function App() {
-  const [color, setColor] = useState('')
+  const [color, setColor] = useState('#bada55')
   const [error, setError] = useState(false)
-  const [list, setList] = useState([])
+  const [list, setList] = useState(new Values('#bada55').all(10))
 
   const handleSubmit = (e) => {
     e.preventDefault()

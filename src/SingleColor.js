@@ -13,6 +13,18 @@ const SingleColor = ({ rgb, weight, index, hexColors }) => {
    * using rgbToHex function from utils.js from stackoverflow to convert rgb to hex
    */
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAlert(false)
+    }, 3000)
+    return () => clearTimeout()
+  }, [alert])
+
+  /*
+   * setTimeout when alert change and remove paragraph from the color square
+   * clearTimeout after each change
+   */
+
   return (
     <article
       className={`color ${index > 8 && 'color-light'}`}
@@ -21,9 +33,21 @@ const SingleColor = ({ rgb, weight, index, hexColors }) => {
        * for darker colors
        */
       style={{ backgroundColor: `rgb(${bcg})` }}
+      onClick={() => {
+        setAlert(true)
+        navigator.clipboard.writeText(hex)
+      }}
+      /*
+       * setAlert to true to display a paragraph
+       * function for copy to clipboard
+       */
     >
       <p className='percent-value'>{weight}%</p>
       <p className='color-value'>{hex}</p>
+      {alert && <p className='alert'>copied to clipboard</p>}
+      {/*
+       * If alert is true display a paragraph
+       */}
     </article>
   )
 }

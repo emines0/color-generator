@@ -1,4 +1,4 @@
-#### Values JS
+#### Colors generator
 
 [values.js](https://github.com/noeldelgado/values.js)
 
@@ -11,4 +11,6 @@
 - use function join
 - using function from util.js to convert rgb to hex
 - adding class based on condition
-- copy to clipboard
+- add paragraph while click inside the square
+- copy hex value to clipboard
+- remove paragraph after 3 seconds (useEffect)
